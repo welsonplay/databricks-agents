@@ -1,18 +1,18 @@
 # Databricks Agent Skills
 
-Skills para assistentes de codificacao com IA (Claude Code, Cursor, GitHub Copilot, etc.) que fornecem orientacao especifica para Databricks.
+Skills for AI coding assistants (Claude Code, Cursor, GitHub Copilot, etc.) that provide Databricks-specific guidance.
 
-Publicado no [skills.sh](https://skills.sh) — o diretorio aberto de skills para agentes IA.
+Published on [skills.sh](https://skills.sh) — the open agent skills directory.
 
-## Instalacao
+## Installation
 
-### Instalar todas as skills
+### Install all skills
 
 ```bash
 npx skills add welsonplay/databricks-agents
 ```
 
-### Instalar uma skill especifica
+### Install a specific skill
 
 ```bash
 npx skills add welsonplay/databricks-agents --skill databricks-core
@@ -20,127 +20,127 @@ npx skills add welsonplay/databricks-agents --skill databricks-apps
 npx skills add welsonplay/databricks-agents --skill databricks-pipelines
 ```
 
-### Instalar para agentes especificos
+### Install for specific agents
 
 ```bash
-# Apenas para Claude Code
+# Claude Code only
 npx skills add welsonplay/databricks-agents -a claude-code
 
-# Para Claude Code e Cursor
+# Claude Code and Cursor
 npx skills add welsonplay/databricks-agents -a claude-code -a cursor
 
-# Para todos os agentes suportados
+# All supported agents
 npx skills add welsonplay/databricks-agents --all
 ```
 
-### Instalacao global (disponivel em todos os projetos)
+### Global installation (available across all projects)
 
 ```bash
 npx skills add welsonplay/databricks-agents -g
 ```
 
-### Gerenciar skills instaladas
+### Manage installed skills
 
 ```bash
-# Listar skills instaladas
+# List installed skills
 npx skills list
 
-# Verificar atualizacoes
+# Check for updates
 npx skills check
 
-# Atualizar todas
+# Update all
 npx skills update
 
-# Remover uma skill
+# Remove a skill
 npx skills remove databricks-core
 
-# Remover todas
+# Remove all
 npx skills remove --all
 ```
 
-## Skills Disponiveis
+## Available Skills
 
-| Skill | Descricao | Status |
-|-------|-----------|--------|
-| **databricks-core** | Operacoes core da CLI: autenticacao, perfis, exploracao de dados | Estavel |
-| **databricks-apps** | Construir apps full-stack TypeScript usando AppKit | Estavel |
-| **databricks-dabs** | Declarative Automation Bundles para deploy de recursos | Estavel |
-| **databricks-jobs** | Orquestracao e agendamento de Jobs (Lakeflow Jobs) | Estavel |
-| **databricks-lakebase** | Lakebase Postgres Autoscaling (banco OLTP serverless) | Estavel |
-| **databricks-model-serving** | Endpoints de Model Serving para inferencia LLM/ML | Experimental |
-| **databricks-pipelines** | Lakeflow Spark Declarative Pipelines (ETL/DLT) | Estavel |
+| Skill | Description | Status |
+|-------|-------------|--------|
+| **databricks-core** | Core CLI operations: auth, profiles, data exploration | Stable |
+| **databricks-apps** | Build full-stack TypeScript apps using AppKit | Stable |
+| **databricks-dabs** | Declarative Automation Bundles for resource deployment | Stable |
+| **databricks-jobs** | Jobs orchestration and scheduling (Lakeflow Jobs) | Stable |
+| **databricks-lakebase** | Lakebase Postgres Autoscaling (serverless OLTP) | Stable |
+| **databricks-model-serving** | Model Serving endpoints for LLM/ML inference | Experimental |
+| **databricks-pipelines** | Lakeflow Spark Declarative Pipelines (ETL/DLT) | Stable |
 
-## Hierarquia de Skills
+## Skill Hierarchy
 
 ```
-databricks-core (fundacao)
-├── databricks-apps        (produto)
-├── databricks-jobs        (produto)
-├── databricks-dabs        (habilitador)
-├── databricks-lakebase    (produto)
-├── databricks-model-serving (produto - experimental)
-└── databricks-pipelines   (produto)
+databricks-core (foundation)
+├── databricks-apps        (product)
+├── databricks-jobs        (product)
+├── databricks-dabs        (enabler)
+├── databricks-lakebase    (product)
+├── databricks-model-serving (product - experimental)
+└── databricks-pipelines   (product)
 ```
 
-A skill `databricks-core` e a base e deve ser carregada primeiro. As demais sao skills de produto que dependem dela.
+The `databricks-core` skill is the foundation and should be loaded first. All other skills are product skills that depend on it.
 
-## Estrutura
+## Structure
 
-Cada skill segue a [Agent Skills Specification](https://agentskills.io/specification):
+Each skill follows the [Agent Skills Specification](https://agentskills.io/specification):
 
 ```
 skill-name/
-├── SKILL.md           # Arquivo principal com frontmatter YAML + instrucoes
-└── references/        # Documentacao adicional carregada sob demanda
+├── SKILL.md           # Main file with YAML frontmatter + instructions
+└── references/        # Additional documentation loaded on demand
 ```
 
-## Desenvolvimento
+## Development
 
-### Criando Novas Skills
+### Creating New Skills
 
-Crie uma "subskill" que referencia a skill principal:
+Create a subskill that references the parent skill:
 
 ```markdown
 ---
 name: "ai-databricks-apps"
-description: "Databricks apps com recursos de IA"
+description: "Databricks apps with AI features"
 parent: databricks-apps
 ---
 
-# Databricks Apps com IA
+# AI-powered Databricks Apps
 
-Primeiro, carregue a skill base databricks-apps para orientacao fundamental.
+First, load the base databricks-apps skill for foundational guidance.
 
-Depois aplique estes padroes adicionais:
-- Padrao customizado 1
-- Padrao customizado 2
+Then apply these additional patterns:
+- Custom pattern 1
+- Custom pattern 2
 ```
 
-Ou use o comando init para criar o template:
+Or use the init command to scaffold a template:
 
 ```bash
-npx skills init minha-nova-skill
+npx skills init my-new-skill
 ```
 
-### Gerenciamento do Manifest
+### Manifest Management
 
-Apos adicionar ou atualizar skills, gere o manifest:
+After adding or updating skills, regenerate the manifest:
 
 ```bash
-python3 scripts/skills.py              # gerar manifest (padrao)
-python3 scripts/skills.py validate     # validar para CI
+python3 scripts/skills.py              # generate manifest (default)
+python3 scripts/skills.py validate     # validate for CI
 ```
 
-## Seguranca
+## Security
 
-Ao documentar exemplos, ofusque informacoes sensiveis:
+When writing examples, obfuscate sensitive information:
 
-- Workspace IDs: use `1111111111111111` em vez de IDs reais
+- Workspace IDs: use `1111111111111111` instead of real IDs
 - URLs: use `company-workspace.cloud.databricks.com`
-- Nunca inclua tokens, senhas ou credenciais reais
-- Use placeholders para usuarios, equipes e IDs de recursos
+- Never include real tokens, passwords, or credentials
+- Use placeholders for users, teams, and resource IDs
 
-## Contribuindo
+## Contributing
 
-- Exemplos na documentacao devem seguir o principio de menor privilegio
-- Ofusque valores sensiveis: workspace IDs, URLs, credenciais
+- Documentation examples must follow least-privilege defaults
+- Obfuscate sensitive values: workspace IDs, URLs, credentials
