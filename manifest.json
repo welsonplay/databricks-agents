@@ -1,0 +1,123 @@
+{
+  "version": "2",
+  "updated_at": "2026-04-08T18:22:57Z",
+  "skills": {
+    "databricks-apps": {
+      "version": "0.1.1",
+      "description": "Databricks Apps development and deployment",
+      "experimental": false,
+      "updated_at": "2026-04-08T14:20:38Z",
+      "files": [
+        "SKILL.md",
+        "references\\appkit\\appkit-sdk.md",
+        "references\\appkit\\frontend.md",
+        "references\\appkit\\lakebase.md",
+        "references\\appkit\\model-serving.md",
+        "references\\appkit\\overview.md",
+        "references\\appkit\\proto-contracts.md",
+        "references\\appkit\\proto-first.md",
+        "references\\appkit\\sql-queries.md",
+        "references\\appkit\\trpc.md",
+        "references\\other-frameworks.md",
+        "references\\platform-guide.md",
+        "references\\testing.md"
+      ]
+    },
+    "databricks-core": {
+      "version": "0.1.0",
+      "description": "Core Databricks skill for CLI, auth, and data exploration",
+      "experimental": false,
+      "updated_at": "2026-04-08T14:20:38Z",
+      "files": [
+        "SKILL.md",
+        "data-exploration.md",
+        "databricks-cli-auth.md",
+        "databricks-cli-install.md"
+      ]
+    },
+    "databricks-dabs": {
+      "version": "0.0.0",
+      "description": "Declarative Automation Bundles (DABs) for deploying and managing Databricks resources",
+      "experimental": false,
+      "updated_at": "2026-04-08T14:20:38Z",
+      "files": [
+        "SKILL.md",
+        "references\\alerts.md",
+        "references\\bundle-structure.md",
+        "references\\deploy-and-run.md",
+        "references\\resource-permissions.md",
+        "references\\sdp-pipelines.md"
+      ]
+    },
+    "databricks-jobs": {
+      "version": "0.1.0",
+      "description": "Databricks Jobs orchestration and scheduling",
+      "experimental": false,
+      "updated_at": "2026-04-08T15:20:48Z",
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "databricks-lakebase": {
+      "version": "0.1.0",
+      "description": "Databricks Lakebase database development",
+      "experimental": false,
+      "updated_at": "2026-04-08T14:20:38Z",
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "databricks-model-serving": {
+      "version": "0.1.0",
+      "description": "Databricks Model Serving endpoint management",
+      "experimental": true,
+      "updated_at": "2026-04-08T14:20:38Z",
+      "files": [
+        "SKILL.md"
+      ]
+    },
+    "databricks-pipelines": {
+      "version": "0.1.0",
+      "description": "Databricks Pipelines (DLT) for ETL and streaming",
+      "experimental": false,
+      "updated_at": "2026-04-08T15:20:49Z",
+      "files": [
+        "SKILL.md",
+        "references\\auto-cdc-python.md",
+        "references\\auto-cdc-sql.md",
+        "references\\auto-cdc.md",
+        "references\\auto-loader-python.md",
+        "references\\auto-loader-sql.md",
+        "references\\auto-loader.md",
+        "references\\expectations-python.md",
+        "references\\expectations-sql.md",
+        "references\\expectations.md",
+        "references\\foreach-batch-sink-python.md",
+        "references\\foreach-batch-sink.md",
+        "references\\materialized-view-python.md",
+        "references\\materialized-view-sql.md",
+        "references\\materialized-view.md",
+        "references\\options-avro.md",
+        "references\\options-csv.md",
+        "references\\options-json.md",
+        "references\\options-orc.md",
+        "references\\options-parquet.md",
+        "references\\options-text.md",
+        "references\\options-xml.md",
+        "references\\python-basics.md",
+        "references\\sink-python.md",
+        "references\\sink.md",
+        "references\\sql-basics.md",
+        "references\\streaming-table-python.md",
+        "references\\streaming-table-sql.md",
+        "references\\streaming-table.md",
+        "references\\temporary-view-python.md",
+        "references\\temporary-view-sql.md",
+        "references\\temporary-view.md",
+        "references\\view-sql.md",
+        "references\\view.md",
+        "references\\write-spark-declarative-pipelines.md"
+      ]
+    }
+  }
+}
